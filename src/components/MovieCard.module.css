@@ -1,0 +1,42 @@
+.movieCard{
+    list-style: none;
+    font-size: 1.25rem;
+    text-align: center;
+    padding: 2px;
+    overflow: hidden;
+   
+}
+
+.movieCard img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    transition: all .3s ease-in-out;
+}
+
+.movieCard:hover{
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.movieImage{
+    border-radius: 10px;
+    background-color: #212121;    
+}
+
+
+
+@media (max-width: 570px){
+    .movieImage{
+        width: 75%;
+        height: auto;
+    }
+    .movieCard img{
+        width: 90%;
+        height: auto;
+        aspect-ratio: 4/3;
+        object-fit:cover;
+        margin-bottom: 2px;
+        
+    }
+}
