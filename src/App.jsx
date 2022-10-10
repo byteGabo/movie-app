@@ -5,6 +5,7 @@ import {
   Route,
   Link,
   Routes,
+  Navigate,
 } from "react-router-dom";
 import { MovieDetails } from "./pages/MovieDetails";
 import { LandigPage } from "./pages/LandingPage";
@@ -16,14 +17,11 @@ export function App() {
         <NavBar />
       </header>
       <main>
-        <Switch>
-          <Route exact path="/movies/:movieId">
-            <MovieDetails />
-          </Route>
-          <Route path="/">
-            <LandigPage />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/movies/:movieId" element={<MovieDetails />} /> 
+          <Route path="/" element={<LandigPage />} />
+          <Route path="*" element={<Navigate replace to="/"/>}/>
+        </Routes>
       </main>
     </Router>
   );
