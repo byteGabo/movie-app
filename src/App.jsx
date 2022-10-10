@@ -1,9 +1,7 @@
 import { NavBar } from "./components/NavBar";
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link,
   Routes,
   Navigate,
 } from "react-router-dom";
