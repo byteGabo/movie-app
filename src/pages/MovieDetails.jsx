@@ -5,6 +5,7 @@ import { getMovieImg } from "../utils/getMovieImg";
 import { getHttp } from "../utils/httpClient";
 import styles from "./MovieDetails.module.css";
 
+
 export function MovieDetails() {
   const { movieId } = useParams();
   const [isLoading, setIsLoading] = useState(true);
@@ -19,7 +20,7 @@ export function MovieDetails() {
   }, [movieId]);
 
   if (isLoading) {
-    return <Spinner />;
+    return <Spinner/>;
   }
 
   if (!movie) {
@@ -53,7 +54,9 @@ export function MovieDetails() {
         </p>
         <p>
           <strong>Production: </strong>
-          {movie.production_companies.map((production) => production.name).join(", ")}
+          {movie.production_companies
+            .map((production) => production.name)
+            .join(", ")}
         </p>
       </div>
     </div>
